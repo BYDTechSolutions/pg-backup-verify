@@ -21,6 +21,7 @@ const STATUS_TEXT: Record<TableResult['status'], string> = {
 };
 
 const n = (v: number | null) => (v === null ? '-' : v.toLocaleString('en-US'));
+const plural = (count: number, word: string) => `${count} ${word}${count === 1 ? '' : 's'}`;
 const signed = (v: number | null) => (v === null ? '' : v > 0 ? `+${n(v)}` : n(v));
 
 function size(bytes: number): string {
@@ -86,12 +87,12 @@ export function formatReport(report: Report, options: FormatOptions = {}): strin
   const s = report.summary;
   if (report.source) {
     const bad = s.restoredFewer + s.restoredMore + s.missingInRestore + s.missingInSource;
-    const parts = [`${s.tables} tables`, `${s.matched} match`];
+    const parts = [plural(s.tables, 'table'), `${s.matched} match`];
     if (s.withinTolerance) parts.push(`${s.withinTolerance} within tolerance (${formatTolerance(report.tolerance)})`);
     if (bad) parts.push(red(`${bad} mismatched`));
     lines.push(`${parts.join(', ')}. ${n(s.restoredRows)} rows restored, ${n(s.sourceRows)} in the source.`);
   } else {
-    lines.push(`${s.tables} tables, ${n(s.restoredRows)} rows restored.`);
+    lines.push(`${plural(s.tables, 'table')}, ${n(s.restoredRows)} rows restored.`);
   }
 
   const messages = [...r.errors.map((m) => ['error', m] as const), ...r.warnings.map((m) => ['warning', m] as const)];
