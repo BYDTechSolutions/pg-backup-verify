@@ -1,6 +1,6 @@
 {
   "name": "@bydtech/pg-backup-verify",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Prove a Postgres backup restores: restore the dump into a scratch database, compare every table's row count against the source, and drop the scratch database again.",
   "keywords": [
     "postgres",

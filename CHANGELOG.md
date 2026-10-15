@@ -6,6 +6,13 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-16
+
+### Changed
+
+- Published from GitHub Actions through npm trusted publishing, with a
+  provenance attestation linking the package to this repository. No code changes.
+
 ## [0.1.0] - 2026-10-16
 
 ### Added
@@ -25,5 +32,6 @@ All notable changes to this project are documented here. The format follows
   (usage or environment error). Passwords are kept off command lines and out
   of all output.
 
-[Unreleased]: https://github.com/BYDTechSolutions/pg-backup-verify/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/BYDTechSolutions/pg-backup-verify/releases/tag/v0.1.0
+[Unreleased]: https://github.com/BYDTechSolutions/pg-backup-verify/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/BYDTechSolutions/pg-backup-verify/releases/tag/v0.1.1
+[0.1.0]: https://github.com/BYDTechSolutions/pg-backup-verify/tree/0fb4d9b2b25048ba4739132d6108a15c59a8a251
