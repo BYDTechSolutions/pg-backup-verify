@@ -4,7 +4,18 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    # Majors of the dev tools (vitest, tsup, typescript, @types/node) drop
+    # Node 20, which this package supports; take those by hand.
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
+    groups:
+      dev-tools:
+        patterns: ['*']
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: monthly
+    groups:
+      actions:
+        patterns: ['*']
