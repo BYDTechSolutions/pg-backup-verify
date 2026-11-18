@@ -27,8 +27,8 @@ jobs:
       # The integration tests use this server instead of starting a container.
       PGBV_TEST_URL: postgres://postgres:pgbv-Test-Pw-7731@localhost:5432/postgres
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node }}
           cache: npm
